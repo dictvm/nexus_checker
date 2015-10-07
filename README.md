@@ -1,6 +1,18 @@
 # Google Store Nexus  Availability Checker
 A simple Python 3 script that checks if you can order a specified Nexus device in the Google Store. It prints the non-availability to standard output and triggers a pushbullet notification as soon as the device is available.
 
+## Requirements
+
+Install from provided requirements.txt:
+```
+pip3 install -r requirements.txt
+````
+
+Install manually:
+```
+pip3 install requests lxml pushbullet.py
+```
+
 ## Usage
 
 The script is supposed to be run via systemd-timer or as a cronjob. 
