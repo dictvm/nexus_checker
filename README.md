@@ -32,7 +32,6 @@ PB_API_KEY=your_token NEXUS_VARIANT=your_device ./nexus_availability.py
 
 ## Caveats
 * Currently german and english responses are supported. The Google Store uses your IP address to determine your location. If you are using this script on a system that might trigger a localized response from the Google Store, please add your translation of "soon" to the script. I'll gladly accept your pull request.
-* Make sure you're able to disable the checker as soon as the device is available to ensure you do not end up being spammed with availability-messages as soon as your Nexus is available. 😅
 
 ## Todo:
-Check if device store availability notification has already been triggered in order to not be spammed with notifications.
+* improve error handling
