@@ -15,23 +15,48 @@ pip3 install requests lxml pushbullet.py
 
 ## Usage
 
-The script is supposed to be run via systemd-timer or as a cronjob. 
+The script is supposed to be run via systemd-timer or as a cronjob.
 
 You need a valid Pushbullet Access Token, which you can find in the settings: https://www.pushbullet.com/#settings
 
-Define the Nexus-variant you want to buy by providing it's name. The following versions have been tested: 
+Define the Nexus-device you want to buy by providing it's name. The following versions have been tested:
 * 5x
 * 6p
 * 6
 * 9
 
+Also define the Nexus-variant (color) you'd like to order. The following variations are available:
+
+### Nexus 6P:
+
+English:
+* Aluminium
+* Frost
+* Graphite
+
+German:
+* Aluminium
+* Grafit
+* Kristallweiß
+
+### Nexus 5X:
+
+English:
+* Carbon
+* Quartz
+* Ice
+
+German:
+* Anthrazit
+* Eisblau
+* Quarz
+
 Execute the script as follows:
 ```
-PB_API_KEY=your_token NEXUS_VARIANT=your_device ./nexus_availability.py
+PB_API_KEY=your_token NEXUS_DEVICE=your-device NEXUS_VARIANT=color ./nexus_availability.py
 ```
 
 ## Caveats
-* Currently german and english responses are supported. The Google Store uses your IP address to determine your location. If you are using this script on a system that might trigger a localized response from the Google Store, please add your translation of "soon" to the script. I'll gladly accept your pull request.
-
+While availability checking is no longer based on the user's locale/country, the color/variant is. The variant/color is not optional right now, so this version of the checker no longer works for Nexus 9 and other devices, unless you also add their color.
 ## Todo:
-* improve error handling
+* fix caveat :)
